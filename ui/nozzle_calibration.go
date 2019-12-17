@@ -41,17 +41,17 @@ func NozzleCalibrationPanel(ui *UI, parent Panel) Panel {
 
 func (m *nozzleCalibrationPanel) initialize() {
 	defer m.Initialize()
-	m.Grid().Attach(m.createChangeToolButton(0), 1, 0, 1, 1)
-	m.Grid().Attach(m.createChangeToolButton(1), 2, 0, 1, 1)
-	m.Grid().Attach(m.createChangeToolButton(2), 3, 0, 1, 1)
-	m.Grid().Attach(m.createChangeToolButton(3), 4, 0, 1, 1)
+	//m.Grid().Attach(m.createChangeToolButton(0), 1, 0, 1, 1)
+	//m.Grid().Attach(m.createChangeToolButton(1), 2, 0, 1, 1)
+	//m.Grid().Attach(m.createChangeToolButton(2), 3, 0, 1, 1)
+	//m.Grid().Attach(m.createChangeToolButton(3), 4, 0, 1, 1)
 
-	m.Grid().Attach(m.createIncreaseOffsetButton(), 1, 1, 1, 1)
-	m.Grid().Attach(m.createZOffsetLabel(), 2, 1, 2, 1)
-	m.Grid().Attach(m.createDecreaseOffsetButton(), 4, 1, 1, 1)
+	m.Grid().Attach(m.createIncreaseOffsetButton(), 0, 0, 1, 1)
+	m.Grid().Attach(m.createZOffsetLabel(), 2, 0, 2, 1)
+	m.Grid().Attach(m.createDecreaseOffsetButton(), 4, 0, 1, 1)
 
 	m.Grid().Attach(m.createZCalibrationModeButton(), 1, 2, 1, 1)
-	m.Grid().Attach(m.createAutoZCalibrationButton(), 2, 2, 2, 1)
+	//m.Grid().Attach(m.createAutoZCalibrationButton(), 2, 2, 2, 1)
 
 }
 
@@ -97,7 +97,7 @@ func (m *nozzleCalibrationPanel) createAutoZCalibrationButton() gtk.IWidget {
 }
 
 func (m *nozzleCalibrationPanel) createIncreaseOffsetButton() gtk.IWidget {
-	return MustButtonImage("Bed Down", "z-offset-increase.svg", func() {
+	return MustButtonImage("Head UP", "z-offset-increase.svg", func() {
 		if !m.zCalibrationMode {
 			return
 		}
@@ -106,7 +106,7 @@ func (m *nozzleCalibrationPanel) createIncreaseOffsetButton() gtk.IWidget {
 }
 
 func (m *nozzleCalibrationPanel) createDecreaseOffsetButton() gtk.IWidget {
-	return MustButtonImage("Bed Up", "z-offset-decrease.svg", func() {
+	return MustButtonImage("Head Down", "z-offset-decrease.svg", func() {
 		if !m.zCalibrationMode {
 			return
 		}

@@ -36,11 +36,6 @@ func FilamentPanel(ui *UI, parent Panel) Panel {
 func (m *filamentPanel) initialize() {
 	defer m.Initialize()
 
-	m.Grid().Attach(m.createChangeToolButton(0), 1, 0, 1, 1)
-	m.Grid().Attach(m.createChangeToolButton(1), 2, 0, 1, 1)
-	m.Grid().Attach(m.createChangeToolButton(2), 3, 0, 1, 1)
-	m.Grid().Attach(m.createChangeToolButton(3), 4, 0, 1, 1)
-
 	m.Grid().Attach(m.createLoadButton(), 1, 1, 1, 1)
 	m.Grid().Attach(m.createUnloadButton(), 4, 1, 1, 1)
 
